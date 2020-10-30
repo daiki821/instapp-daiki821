@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'better_errors'
 gem 'binding_of_caller'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'devise'
 gem 'hamlit-rails'
 
 group :development, :test do
