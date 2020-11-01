@@ -1,1 +1,14 @@
-@import 'reset'
+@import 'reset';
+@import 'btn';
+@import 'registration';
+
+body{
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 21px;
+  .container{
+    width: 95%;
+    margin:0 auto;
+  }
+
+}

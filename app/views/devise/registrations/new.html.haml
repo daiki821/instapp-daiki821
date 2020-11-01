@@ -1,25 +1,27 @@
-%h2 Sign up
-= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-  = render "devise/shared/error_messages", resource: resource
-  .field
-    = f.label :email
-    %br/
-    = f.email_field :email, autofocus: true, autocomplete: "email"
-  .field
-    = f.label :password
-    - if @minimum_password_length
-      %em
-        (#{@minimum_password_length} characters minimum)
-    %br/
-    = f.password_field :password, autocomplete: "new-password"
-  .field
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation, autocomplete: "new-password"
-  .field
-    = f.label :accountname
-    %br/
-    = f.text_field :accountname, autocomplete: "accountname"
-  .actions
-    = f.submit "Sign up"
-= render "devise/shared/links"
+.registration-image-box
+  = image_tag 'Rectangle.png', class: 'registration-image'
+.container
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = render "devise/shared/error_messages", resource: resource
+    .field
+      = f.label :accountname, class:'label'
+      %br/
+      = f.text_field :accountname, autocomplete: "accountname",class: 'field-box'
+    .field
+      = f.label :email, class:'label'
+      %br/
+      = f.email_field :email, autofocus: true, autocomplete: "email",class: 'field-box'
+    .field
+      = f.label :password, class:'label'
+      - if @minimum_password_length
+        %em.label
+          (#{@minimum_password_length} characters minimum)
+      %br/
+      = f.password_field :password, autocomplete: "new-password",class: 'field-box'
+    .field
+      = f.label :password_confirmation, class:'label'
+      %br/
+      = f.password_field :password_confirmation, autocomplete: "new-password",class: 'field-box last-field'
+    .actions
+      = f.submit "CREATE ACCOUNT",class:'registration-btn'
+  -# = render "devise/shared/links"
