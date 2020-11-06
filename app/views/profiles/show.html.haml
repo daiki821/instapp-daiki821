@@ -1,1 +1,36 @@
-= @user.accountname
+.container
+  .header-box
+    .back-icon-box
+      = image_tag 'backicon.png', alt: '戻るボタンです', class: 'back-icon'
+    .accountname-box
+      .accountname
+        = @user.accountname 
+    .follow-btn-box
+      .follow-btn Follow
+  .user-icon-box
+    = image_tag 'usericon2.png', alt: 'ユーザーのアイコンです', class: 'user-icon'
+  .user-information-box
+    .user-post-box.information-box
+      .count 44
+      .character Posts
+    .user-followers-box.information-box
+      .count 1000
+      .character Followers
+    .user-following-box.information-box
+      .count 113
+      .character Following
+  .user-articles-box
+    .img1
+      = image_tag 'img1.png', alt: '', class: ''
+    .img2
+      = image_tag 'img2.png', alt: '', class: ''
+    .img3
+      = image_tag 'img3.png', alt: '', class: ''
+  .user-articles-box2
+    .img4
+      = image_tag 'img4.png', alt: '', class: ''
+    .img5
+      = image_tag 'img5.png', alt: '', class: ''
+    .img6
+      = image_tag 'img6.png', alt: '', class: ''
+    
