@@ -59,41 +59,36 @@
 
 .user-articles-box{
   display: grid;
-  grid-template: 
-  'img1 img2 img2 '
-  'img1 img3 img3 '
+  grid-template:
+  'img1 img2 img2'
+  'img1 img3 img3'
   ;
-  gap: 8px;
 
   .img1{
-    grid-area:img1;
+    grid-area: img1;
   }
   .img2{
-    grid-area:img2;
+    grid-area: img2;
   }
   .img3{
-    grid-area:img3;
+    grid-area: img3;
   }
-  
 }
-
 .user-articles-box2{
   margin-top: 8px;
   display: grid;
   grid-template:
-  'img5 img4 img4 '
-  'img6 img4 img4 '
+  'img5 img4 img4'
+  'img6 img4 img4'
   ;
-  gap: 8px;
-
 
   .img4{
-    grid-area:img4;
+    grid-area: img4;
   }
   .img5{
-    grid-area:img5;
+    grid-area: img5;
   }
   .img6{
-    grid-area:img6;
+    grid-area: img6;
   }
 }
