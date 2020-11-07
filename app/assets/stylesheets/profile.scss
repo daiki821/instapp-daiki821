@@ -1,0 +1,94 @@
+.header-box{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-bottom: 32px;
+  line-height: 24px;
+  font-size: 16px;
+
+  .accountname-box{
+    padding-left: 20px;
+  }
+
+  .follow-btn-box{
+
+    .follow-btn{
+      color: #BDBDBD;
+    }
+  }
+}
+
+
+// ------------------
+// ユーザーアイコン
+// ------------------
+.user-icon-box{
+  text-align: center;
+  margin-bottom: 46px;
+}
+
+
+// -------------
+// ユーザー情報
+// -------------
+
+.user-information-box{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+
+  .information-box{
+    
+    .count{
+      text-align: center;
+    }
+    .character{
+      color: #9E9E9E;
+    }
+  }
+
+
+  .user-followers-box{
+    margin: 0 50px;
+  }
+}
+// --------------
+// 投稿した画像
+// --------------
+
+
+.user-articles-box{
+  display: grid;
+  grid-template:
+  'img1 img2 img2'
+  'img1 img3 img3'
+  ;
+
+  .img1{
+    grid-area: img1;
+  }
+  .img2{
+    grid-area: img2;
+  }
+  .img3{
+    grid-area: img3;
+  }
+}
+.user-articles-box2{
+  margin-top: 8px;
+  display: grid;
+  grid-template:
+  'img5 img4 img4'
+  'img6 img4 img4'
+  ;
+
+  .img4{
+    grid-area: img4;
+  }
+  .img5{
+    grid-area: img5;
+  }
+  .img6{
+    grid-area: img6;
+  }
+}
