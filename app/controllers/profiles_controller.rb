@@ -1,11 +1,10 @@
 class ProfilesController < ApplicationController
   def show
     @user = current_user
-    @profile = current_user.profile
+    @profle = current_user.prepare_profile
   end
 
   def edit
-    @profle = current_user.prepare_profile
   end
 
   def update

@@ -9,6 +9,14 @@
       .follow-btn Follow
   .user-icon-box
     = image_tag current_user.user_avatar,class: 'user-icon'
+  .user-icon-form-box.hidden
+    = form_with(model: @profle, url: profile_path, method: 'put', local: true) do |f|
+      %div
+        = f.file_field :avatar
+      = f.submit '保存', class: 'btn'
+
+  
+
   .user-information-box
     .user-post-box.information-box
       .count 44

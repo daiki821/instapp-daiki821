@@ -15,3 +15,12 @@ require("channels")
 //
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
+
+import $ from 'jquery'
+import axios from 'axios'
+
+document.addEventListener('DOMContentLoaded', () =>{
+  $('.user-icon').on('click', () => {
+    $('.user-icon-form-box').removeClass('hidden')
+  })
+})
