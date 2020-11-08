@@ -25,6 +25,15 @@
 .user-icon-box{
   text-align: center;
   margin-bottom: 46px;
+  
+
+
+  .user-icon{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 }
 
 

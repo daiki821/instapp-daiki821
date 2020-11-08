@@ -8,7 +8,7 @@
     .follow-btn-box
       .follow-btn Follow
   .user-icon-box
-    = image_tag 'usericon2.png', alt: 'ユーザーのアイコンです', class: 'user-icon'
+    = image_tag current_user.user_avatar,class: 'user-icon'
   .user-information-box
     .user-post-box.information-box
       .count 44
