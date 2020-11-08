@@ -26,4 +26,18 @@ class User < ApplicationRecord
   
 
   has_one :profile, dependent: :destroy
+
+
+  def user_avatar
+    if profile&.avatar&.attached?
+      profile.avatar
+    else
+      'default-avatar.png'
+    end
+  end
+
+  def prepare_profile
+    profile || build_profile
+  end
+
 end
