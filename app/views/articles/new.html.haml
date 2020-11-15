@@ -1,0 +1,9 @@
+= form_with(model: @article, url: articles_path, method: 'post', local: true) do |f|
+  %div
+    = f.file_field :images, multiple: true 
+  %div
+    = f.label :content
+  %div
+    = f.text_area :content
+  = f.submit '保存', class: 'btn'
+  

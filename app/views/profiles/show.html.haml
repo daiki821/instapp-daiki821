@@ -15,8 +15,6 @@
         = f.file_field :avatar
       = f.submit '保存', class: 'btn'
 
-  
-
   .user-information-box
     .user-post-box.information-box
       .count 44
@@ -27,7 +25,7 @@
     .user-following-box.information-box
       .count 113
       .character Following
-  .user-articles-box
+  .user-articles-box.grid
     = image_tag 'img1.png', alt: '', class: 'img1'
     = image_tag 'img2.png', alt: '', class: 'img2'
     = image_tag 'img3.png', alt: '', class: 'img3'
