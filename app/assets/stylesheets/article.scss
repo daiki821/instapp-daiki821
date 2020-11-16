@@ -6,51 +6,79 @@
 
 
 
-// 記事を投稿したユーザーのcss
-.article-user-box{
-  display: flex;
-  margin-bottom: 11px;
 
-
-  .article-user-icon-box{
-    margin-right: 8px;
-
-    .user-icon-min{
-      width: 30px;
-      height: 30px;
-      border-radius:50%;
-    }
-  }
-
-  .user-box{
-
-    .user-name-box{
-      font-size: 14px;
-    }
-
-    .create-time-box{
-      font-size: 12px;
-      color: #9E9E9E;
-      margin-top: -5px;
-    }
-  }
-}
 
 
 // 投稿された記事のcss
-
 .user-articles-box{
+  margin-bottom: 45px;
+
+  // ユーザーのcss;
+  .article-user-box{
+    display: flex;
+
+
+    .article-user-icon-box{
+      margin-right: 8px;
+
+      .user-icon-min{
+        width: 30px;
+        height: 30px;
+        border-radius:50%;
+      }
+    }
+
+    .user-box{
+
+      .user-name-box{
+        font-size: 14px;
+      }
+
+      .create-time-box{
+        font-size: 12px;
+        color: #9E9E9E;
+        margin-top: -5px;
+      }
+    }
+  }
   
+  // 画像のcss
   .article-image-box{
 
     .article-image{
-      width: 150px;
+      width: 169px;
       height: 100px;
       margin: 5px;
       object-fit: cover;
     }
     .article-image:first-child{
+      height: 210px;
+    }
+    .article-image:nth-of-type(n + 4){
+      display: none;  
+      width: 100%;
       height: 200px;
+
+    
+    }
+  }
+
+  // お気に入りなどの機能のボタン
+  .function-box{
+    margin: 5px 0 5px;
+
+    .comment-btn{
+      margin: 0 10px;
+    }
+  }
+
+  .article-content-box{
+    display: flex;
+
+
+    .article-user-name{
+      margin-right: 10px;
+      
     }
   }
 }
@@ -58,22 +86,3 @@
 
 
 
-// お気に入りなどの機能のボタン
-
-.function-box{
-  margin: 10px 0 10px;
-
-  .comment-btn{
-    margin: 0 10px;
-  }
-}
-
-.article-content-box{
-  display: flex;
-
-
-  .article-user-name{
-    margin-right: 10px;
-    
-  }
-}

@@ -7,31 +7,31 @@
 .container
   .post-button-box
     = image_tag 'camera.png', alt: '投稿ボタン'
-  .article-box
-    .article-user-box
-      .article-user-icon-box
-        = image_tag current_user.user_avatar, class: 'user-icon-min'
-      .user-box
-        .user-name-box
-          user-name
-        .create-time-box
-          create-time
+  - @articles.each do |article|
     .user-articles-box
-      - @articles.each do |article|
-        .article-image-box.grid
-          - article.images.each.with_index(1) do |image, i|
-            = image_tag image, class: "img#{i} article-image"
-        .article_content
+      .article-user-box
+        .article-user-icon-box
+          = image_tag current_user.user_avatar, class: 'user-icon-min'
+        .user-box
+          .user-name-box
+            = current_user.accountname
+          .create-time-box
+            create-time
+      .article-image-box.grid
+        - article.images.each.with_index(1) do |image, i|
+          = image_tag image, class: "img#{i} article-image"
+      .function-box
+        = image_tag 'like.png',alt: 'お気に入りボタン'
+        = image_tag 'comment.png', alt: 'コメントボタン',class: 'comment-btn'
+        = image_tag 'share.png', alt: 'シェアボタン'
+      .article-content-box
+        .article-user-name
+          user_name
+        .article-content
           = article.content
-        .function-box
-          = image_tag 'like.png',alt: 'お気に入りボタン'
-          = image_tag 'comment.png', alt: 'コメントボタン',class: 'comment-btn'
-          = image_tag 'share.png', alt: 'シェアボタン'
-        .article-content-box
-          .article-user-name
-            username
-          .article-content
-            content
+      .slider
+      
 
 
-  
+
+= javascript_pack_tag 'article'

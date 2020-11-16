@@ -1,6 +1,5 @@
 class ProfilesController < ApplicationController
   def show
-    @user = current_user
     @profle = current_user.prepare_profile
   end
 
