@@ -4,7 +4,7 @@
       = image_tag 'backicon.png', alt: '戻るボタンです', class: 'back-icon'
     .accountname-box
       .accountname
-        = @user.accountname 
+        = current_user.accountname 
     .follow-btn-box
       .follow-btn Follow
   .user-icon-box
@@ -34,3 +34,5 @@
     = image_tag 'img5.png', alt: '', class: 'img5'
     = image_tag 'img6.png', alt: '', class: 'img6'
   
+
+= javascript_pack_tag 'profile'
