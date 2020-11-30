@@ -6,32 +6,33 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('.article-image:nth-of-type(n + 4)').addClass('hidden')
 
+  // 矢印の表示
+  const toggleChangeBtn = (val) => {
+    let activeIndex = $(val).find('.article-image').index($('.active'))
+    let imageIndex = $(val).find('.article-image').length
+    if(imageIndex <= 3){
+      // 画像が3枚以下の場合
+      $(val).find('.slider-btn-left').hide()
+      $(val).find('.slider-btn-right').hide()
+    }else if(activeIndex == -1){
+      // 最初の３枚が表示されているとき
+      $(val).find('.slider-btn-left').hide()
+      $(val).find('.slider-btn-right').show()
+    }else if(activeIndex == $(val).find('.article-image').length - 1){
+      // 画像が最後だったとき
+      $(val).find('.slider-btn-right').hide()
+      $(val).find('.slider-btn-left').show()
+    }else{
+      // 画像がまだ右にも左にも表示できる時
+      $(val).find('.slider-btn-left').show()
+      $(val).find('.slider-btn-right').show()
+    }
+  }
+
   //記事1つ1つに処理
   $('.user-articles-box').each((i,val) => {
-    // 矢印の表示
-    const toggleChangeBtn = () => {
-      let activeIndex = $(val).find('.article-image').index($('.active'))
-      let imageIndex = $(val).find('.article-image').length
-      if(imageIndex <= 3){
-        // 画像が3枚以下の場合
-        $(val).find('.slider-btn-left').hide()
-        $(val).find('.slider-btn-right').hide()
-      }else if(activeIndex == -1){
-        // 最初の３枚が表示されているとき
-        $(val).find('.slider-btn-left').hide()
-        $(val).find('.slider-btn-right').show()
-      }else if(activeIndex == $(val).find('.article-image').length - 1){
-        // 画像が最後だったとき
-        $(val).find('.slider-btn-right').hide()
-        $(val).find('.slider-btn-left').show()
-      }else{
-        // 画像がまだ右にも左にも表示できる時
-        $(val).find('.slider-btn-left').show()
-        $(val).find('.slider-btn-right').show()
-      }
-    }
-
-    toggleChangeBtn();
+    
+    toggleChangeBtn(val);
 
     // 次の画像に進むの処理
     $(val).on('click', '.slider-btn-right', () => {
@@ -50,11 +51,12 @@ document.addEventListener('DOMContentLoaded', () => {
         $active.next().addClass('active')
         $active.next().removeClass('hidden') 
       }
-      toggleChangeBtn();
+      toggleChangeBtn(val);
     })
+    
+  })
 
-
-
+  $('.user-articles-box').each((i,val) => {
     // 前の画像に戻る処理
     $(val).on('click','.slider-btn-left', () => {
       let activeIndex = $(val).find('.article-image').index($('.active'))
@@ -71,13 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
         $active.prev().addClass('active')
         $active.prev().removeClass('hidden')
       }
-      toggleChangeBtn();
+      toggleChangeBtn(val);
     })
-
-    
   })
-
-
 })
 
 
