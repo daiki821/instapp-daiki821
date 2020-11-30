@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('.article-image:nth-of-type(n + 4)').addClass('hidden')
 
-  // 別々で処理を行う
+  //記事1つ1つに処理
   $('.user-articles-box').each((i,val) => {
     // 矢印の表示
     const toggleChangeBtn = () => {
@@ -40,12 +40,12 @@ document.addEventListener('DOMContentLoaded', () => {
       let activeIndex = $(val).find('.article-image').index($('.active'))
       let $fourthImage = $(val).find('.article-image:nth-of-type(4)')
       if(activeIndex == -1){
-        // 最初の３枚が表示された時
+        // 最初の３枚が表示されている時
         $(val).find('.article-image:nth-of-type(-n + 3)').addClass('hidden')
         $fourthImage.removeClass('hidden')
         $fourthImage.addClass('active')
       }else{
-        // 最初の3枚以外
+        // 最初の3枚以外が表示されている
         let $active = $(val).find('.active')
         $active.removeClass('active')
         $active.addClass('hidden')
@@ -62,10 +62,12 @@ document.addEventListener('DOMContentLoaded', () => {
       let activeIndex = $(val).find('.article-image').index($('.active'))
       let $active = $(val).find('.active')
       if(activeIndex == 3) {
+        // ４枚目が表示されている時
         $(val).find('.article-image:nth-of-type(-n + 3)').removeClass('hidden')
         $active.removeClass('active')
         $active.addClass('hidden')
       }else{
+        // それ以外
         $active.removeClass('active')
         $active.addClass('hidden')
         $active.prev().addClass('active')
