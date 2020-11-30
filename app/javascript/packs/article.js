@@ -2,8 +2,6 @@ import $ from 'jquery'
 
 
 
-
-
 document.addEventListener('DOMContentLoaded', () => {
 
   $('.article-image:nth-of-type(n + 4)').addClass('hidden')
