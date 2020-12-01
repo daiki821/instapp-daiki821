@@ -61,9 +61,13 @@
     .article-image:nth-of-type(n + 4){
       width: 100%;
       height: 200px;
-      // display: none;
     
     }
+    .one-image{
+      width: 100%;
+      height: 200px;
+    }
+    
   }
 
   // お気に入りなどの機能のボタン
@@ -110,3 +114,5 @@
 .hidden{
   display: none;
 }
+
+
