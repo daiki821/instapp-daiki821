@@ -1,0 +1,35 @@
+.grid{
+  display: grid;
+  grid-template:
+  'img1 img2 img2'
+  'img1 img3 img3'
+  ;
+
+  .img1{
+    grid-area: img1;
+  }
+  .img2{
+    grid-area: img2;
+  }
+  .img3{
+    grid-area: img3;
+  }
+}
+
+// 画像が２枚だった時のgridレイアウト
+.two-image{
+  display: grid;
+  grid-template:
+  'img1 img2' 1fr
+  ;
+  .img1{
+    grid-area: img1;
+  }
+  .img2{
+    grid-area: img2;
+    margin: 5px;
+    height: 210px;
+    width: 169px;
+    object-fit: cover;
+  }
+}

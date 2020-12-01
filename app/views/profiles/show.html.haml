@@ -1,10 +1,10 @@
 .container
-  .header-box
+  .top-box
     .back-icon-box
       = image_tag 'backicon.png', alt: '戻るボタンです', class: 'back-icon'
     .accountname-box
       .accountname
-        = @user.accountname 
+        = current_user.accountname 
     .follow-btn-box
       .follow-btn Follow
   .user-icon-box
@@ -14,8 +14,6 @@
       %div
         = f.file_field :avatar
       = f.submit '保存', class: 'btn'
-
-  
 
   .user-information-box
     .user-post-box.information-box
@@ -27,7 +25,7 @@
     .user-following-box.information-box
       .count 113
       .character Following
-  .user-articles-box
+  .user-articles-box.grid
     = image_tag 'img1.png', alt: '', class: 'img1'
     = image_tag 'img2.png', alt: '', class: 'img2'
     = image_tag 'img3.png', alt: '', class: 'img3'
@@ -36,3 +34,5 @@
     = image_tag 'img5.png', alt: '', class: 'img5'
     = image_tag 'img6.png', alt: '', class: 'img6'
   
+
+= javascript_pack_tag 'profile'

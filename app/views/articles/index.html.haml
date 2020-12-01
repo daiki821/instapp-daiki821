@@ -1,0 +1,39 @@
+- if user_signed_in?
+  = link_to 'ログアウト',destroy_user_session_path, data: {method: 'delete'}
+- else
+  = link_to '会員登録', new_user_registration_path
+  = link_to 'ログイン',user_session_path
+
+
+.container
+  .post-button-box
+    = link_to image_tag(src= 'camera.png', alt: '投稿ボタン' ), new_article_path
+  - @articles.each do |article|
+    .user-articles-box
+      .article-user-box
+        .article-user-icon-box
+          = image_tag article.user.user_avatar, class: 'user-icon-min'
+        .user-box
+          .user-name-box
+            = article.user.accountname
+          .create-time-box
+            create-time
+      .article-image-box.grid
+        - article.images.each.with_index(1) do |image, i|
+          = image_tag image, class: "img#{i} article-image"
+      .function-box
+        = image_tag 'like.png',alt: 'お気に入りボタン'
+        = image_tag 'comment.png', alt: 'コメントボタン',class: 'comment-btn'
+        = image_tag 'share.png', alt: 'シェアボタン'
+      .article-content-box
+        .article-user-name
+          = article.user.accountname
+        .article-content
+          = article.content
+      = image_tag 'slider-btn-left.png',class: 'slider-btn-left'
+      = image_tag 'slider-btn-right.png',class: 'slider-btn-right'
+      
+
+
+
+= javascript_pack_tag 'article'

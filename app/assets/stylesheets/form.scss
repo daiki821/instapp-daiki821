@@ -1,0 +1,40 @@
+.new-user-box{
+  display: flex;
+  margin-bottom: 30px;
+
+  .new-user-icon-box{
+    margin-right: 15px;
+    
+    
+    .new-user-icon{
+      width: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  .new-user-accountname-box{
+    margin-top: 3px;
+  }
+}
+
+
+.file-field{
+  opacity: .9;
+}
+
+.text-area{
+  border: 1px solid rgba(0,0,0,.3);
+  width: 100%;
+  height: 200px;
+  border-radius: 20px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.new-btn{
+  opacity: .9;
+  padding: 0 20px;
+  background-color: rgb(196, 195, 195);
+}
+

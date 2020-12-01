@@ -1,0 +1,19 @@
+.container
+  = render 'commons/top', center: 'Status'
+  %ul
+    - @article.errors.full_messages.each do |message|
+      %li
+        = message
+  .new-user-box
+    .new-user-icon-box
+      = image_tag current_user.user_avatar, class: 'new-user-icon'
+    .new-user-accountname-box
+      = current_user.accountname
+
+  = form_with(model: @article, url: articles_path, method: 'post', local: true) do |f|
+    %div
+      = f.file_field :images, multiple: true, class: 'file-field'
+    %div
+      = f.text_area :content, class: 'text-area'
+    = f.submit '投稿', class: 'btn new-btn'
+    
