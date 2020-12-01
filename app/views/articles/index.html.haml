@@ -22,7 +22,10 @@
         - article.images.each.with_index(1) do |image, i|
           = image_tag image, class: "img#{i} article-image"
       .function-box
-        = image_tag 'like.png',alt: 'お気に入りボタン'
+        - if current_user.has_liked?(article)
+          = link_to image_tag(src= 'like.png', alt: 'いいねボタン'), article_like_path(article), data: { method: 'delete'}
+        - else
+          = link_to image_tag(src= 'no-like.png', alt: 'いいねボタン'), article_like_path(article), data: { method: 'post'}
         = image_tag 'comment.png', alt: 'コメントボタン',class: 'comment-btn'
         = image_tag 'share.png', alt: 'シェアボタン'
       .article-content-box
