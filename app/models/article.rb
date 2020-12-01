@@ -13,6 +13,9 @@
 #  index_articles_on_user_id  (user_id)
 #
 class Article < ApplicationRecord
+  validates :images, presence: true
+  validates :images, length: { maximum: 10 } 
+  validates :content, presence: true
   belongs_to :user
   has_many_attached :images
 end

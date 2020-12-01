@@ -1,6 +1,9 @@
 .container
   = render 'commons/top', center: 'Status'
-
+  %ul
+    - @article.errors.full_messages.each do |message|
+      %li
+        = message
   .new-user-box
     .new-user-icon-box
       = image_tag current_user.user_avatar, class: 'new-user-icon'
