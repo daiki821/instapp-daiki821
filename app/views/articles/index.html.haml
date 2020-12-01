@@ -7,15 +7,15 @@
 
 .container
   .post-button-box
-    = image_tag 'camera.png', alt: '投稿ボタン'
+    = link_to image_tag(src= 'camera.png', alt: '投稿ボタン' ), new_article_path
   - @articles.each do |article|
     .user-articles-box
       .article-user-box
         .article-user-icon-box
-          = image_tag current_user.user_avatar, class: 'user-icon-min'
+          = image_tag article.user.user_avatar, class: 'user-icon-min'
         .user-box
           .user-name-box
-            = current_user.accountname
+            = article.user.accountname
           .create-time-box
             create-time
       .article-image-box.grid
@@ -27,7 +27,7 @@
         = image_tag 'share.png', alt: 'シェアボタン'
       .article-content-box
         .article-user-name
-          user_name
+          = article.user.accountname
         .article-content
           = article.content
       = image_tag 'slider-btn-left.png',class: 'slider-btn-left'
