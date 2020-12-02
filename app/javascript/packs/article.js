@@ -2,6 +2,7 @@ import $ from 'jquery'
 
 
 
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // 画像が３枚以下だった時の処理

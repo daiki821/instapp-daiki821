@@ -9,7 +9,7 @@
   .post-button-box
     = link_to image_tag(src= 'camera.png', alt: '投稿ボタン' ), new_article_path
   - @articles.each do |article|
-    .user-articles-box
+    .user-articles-box.like-json{ data: {article_id: article.id} }
       .article-user-box
         .article-user-icon-box
           = image_tag article.user.user_avatar, class: 'user-icon-min'
@@ -22,10 +22,8 @@
         - article.images.each.with_index(1) do |image, i|
           = image_tag image, class: "img#{i} article-image"
       .function-box
-        - if current_user.has_liked?(article)
-          = link_to image_tag(src= 'like.png', alt: 'いいねボタン'), article_like_path(article), data: { method: 'delete'}
-        - else
-          = link_to image_tag(src= 'no-like.png', alt: 'いいねボタン'), article_like_path(article), data: { method: 'post'}
+        = image_tag 'like.png', alt: 'いいねボタン', class: 'like-btn'
+        = image_tag 'no-like.png', alt: 'いいねボタン', class: 'no-like-btn'
         = image_tag 'comment.png', alt: 'コメントボタン',class: 'comment-btn'
         = image_tag 'share.png', alt: 'シェアボタン'
       .article-content-box
@@ -40,3 +38,4 @@
 
 
 = javascript_pack_tag 'article'
+= javascript_pack_tag 'like'
