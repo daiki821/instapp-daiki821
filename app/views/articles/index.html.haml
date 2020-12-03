@@ -24,7 +24,8 @@
       .function-box
         = image_tag 'like.png', alt: 'いいねボタン', class: 'like-btn'
         = image_tag 'no-like.png', alt: 'いいねボタン', class: 'no-like-btn'
-        = image_tag 'comment.png', alt: 'コメントボタン',class: 'comment-btn'
+        = link_to article_comments_path(article_id: article.id) do
+          = image_tag 'comment.png', alt: 'コメントボタン',class: 'comment-btn'
         = image_tag 'share.png', alt: 'シェアボタン'
       .article-content-box
         .article-user-name
