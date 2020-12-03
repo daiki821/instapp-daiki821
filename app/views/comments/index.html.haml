@@ -2,13 +2,22 @@
   = render 'commons/top', center: 'Comment'
   - @comments.each do |comment|
     .comment-box
-      .comment-user-box
-        .comment-user-icon-box
-          = image_tag comment.user.user_avatar, class: 'comment-user-icon'
-        .comment-user-accountname-box
-          = comment.user.accountname
-      .comment-content-box
-        = comment.content
+      -# .comment-user-box
+      -#   .comment-user-icon-box
+      -#     = image_tag comment.user.user_avatar, class: 'comment-user-icon'
+      -#   .comment-user-accountname-box
+      -#     = comment.user.accountname
+      -# .comment-content-box
+      -#   = comment.content
   .comment-form-box
     .comment-form
-      = image_tag 'comment.png', class:'comment-form-btn'
+      .comment-btn-box
+        = image_tag 'comment.png', class:'comment-btn'
+    .comment-text-area-box.hidden
+      .comment-text-area
+        = text_area_tag :comment_content, ''
+      .add-comment-btn-box
+        .add-comment-btn
+          コメントを追加
+
+= javascript_pack_tag 'comment'

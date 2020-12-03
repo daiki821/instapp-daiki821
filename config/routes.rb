@@ -10,5 +10,11 @@ Rails.application.routes.draw do
     resources :comments, only: [:index, :new, :create, :destroy]
   end
 
+  namespace :api, defaults: {format: :json}  do
+    scope '/articles/:article_id' do
+      resources :comments, only: [:index]
+    end
+  end
+
   resource :profile, only: [:show, :edit, :update]
 end
