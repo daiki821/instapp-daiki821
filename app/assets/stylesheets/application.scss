@@ -7,6 +7,7 @@
 @import 'flex';
 @import 'top';
 @import 'form';
+@import 'comment';
 
 body{
   font-size: 14px;
@@ -15,6 +16,7 @@ body{
   .container{
     width: 95%;
     margin:0 auto;
+    position: relative;
   }
 
 }

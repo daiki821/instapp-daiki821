@@ -1,0 +1,14 @@
+.container
+  = render 'commons/top', center: 'Comment'
+  - @comments.each do |comment|
+    .comment-box
+      .comment-user-box
+        .comment-user-icon-box
+          = image_tag comment.user.user_avatar, class: 'comment-user-icon'
+        .comment-user-accountname-box
+          = comment.user.accountname
+      .comment-content-box
+        = comment.content
+  .comment-form-box
+    .comment-form
+      = image_tag 'comment.png', class:'comment-form-btn'
