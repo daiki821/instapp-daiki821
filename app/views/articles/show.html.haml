@@ -1,0 +1,19 @@
+.container
+  = render 'commons/top', center: 'article'
+  .article-card
+    = render 'commons/article', article: @article
+    -# コメント
+  .comment-big-box.comment-json{ data: { article_id: @article.id }}
+  .comment-form-box
+    .comment-form
+      .comment-btn-box
+        = image_tag 'comment.png', class:'comment-btn'
+  .comment-text-area-box
+    .comment-text-area
+      = text_area_tag :comment_content, ''
+    .add-comment-btn-box
+      .add-comment-btn
+        コメントを追加
+= javascript_pack_tag 'article'
+= javascript_pack_tag 'like'
+= javascript_pack_tag 'comment'

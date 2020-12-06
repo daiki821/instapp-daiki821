@@ -5,6 +5,12 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
 
+  def show
+    @article = Article.find(params[:id])
+    @comments = @article.comments
+  end
+
+
   def new 
     @article = current_user.articles.build
   end
