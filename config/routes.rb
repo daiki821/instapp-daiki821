@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :articles do
     resource :like, only: [:show, :create, :destroy]
 
-    resources :comments, only: [:index, :new, :create, :destroy]
+    resources :comments, only: [:index, :create, :destroy]
   end
 
   namespace :api, defaults: {format: :json}  do
