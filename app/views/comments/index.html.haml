@@ -1,14 +1,14 @@
 .container
   = render 'commons/top', center: 'Comment'
-  - @comments.each do |comment|
+  .comment-big-box.comment-json{ data: { article_id: @article.id }}
     .comment-box
-      -# .comment-user-box
-      -#   .comment-user-icon-box
-      -#     = image_tag comment.user.user_avatar, class: 'comment-user-icon'
-      -#   .comment-user-accountname-box
-      -#     = comment.user.accountname
-      -# .comment-content-box
-      -#   = comment.content
+      .comment-user-box
+        .comment-user-icon-box
+          = image_tag comment.user.user_avatar, class: 'comment-user-icon'
+        .comment-user-accountname-box
+          = comment.user.accountname
+      .comment-content-box
+        = comment.content
   .comment-form-box
     .comment-form
       .comment-btn-box
@@ -19,5 +19,4 @@
       .add-comment-btn-box
         .add-comment-btn
           コメントを追加
-
 = javascript_pack_tag 'comment'

@@ -1,0 +1,27 @@
+.user-articles-box.like-json{ data: {article_id: article.id} }
+  .article-user-box
+    .article-user-icon-box
+      = image_tag article.user.user_avatar, class: 'user-icon-min'
+    .user-box
+      .user-name-box
+        = article.user.accountname
+      .create-time-box
+        create-time
+  .article-image-box.grid
+    - article.images.each.with_index(1) do |image, i|
+      = image_tag image, class: "img#{i} article-image"
+  .function-box
+    = image_tag 'like.png', alt: 'いいねボタン', class: 'like-btn'
+    = image_tag 'no-like.png', alt: 'いいねボタン', class: 'no-like-btn'
+    = link_to image_tag(src='comment.png',alt: 'コメントボタン',class: 'comment-icon','data-turbolinks':false),article_path(id: article.id)
+    = image_tag 'share.png', alt: 'シェアボタン'
+  .article-content-box
+    .article-user-name
+      = article.user.accountname
+    .article-content
+      = article.content
+  = image_tag 'slider-btn-left.png',class: 'slider-btn-left'
+  = image_tag 'slider-btn-right.png',class: 'slider-btn-right'
+
+
+
