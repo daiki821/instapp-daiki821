@@ -12,6 +12,8 @@ class CommentsController < ApplicationController
     article = Article.find(params[:article_id])
     @comment = article.comments.build(comment_params.merge(user_id: current_user.id))
     @comment.save!
+   
+
 
     render json: @comment, methods: [:avatar_url]
   end

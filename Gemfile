@@ -33,6 +33,7 @@ gem 'devise'
 gem 'hamlit-rails'
 gem 'active_model_serializers'
 gem 'gon'
+gem 'sidekiq'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -50,6 +51,8 @@ group :development do
   gem 'html2haml'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  gem 'letter_opener'
+  gem 'letter_opener_web', '~> 1.0'
 end
 
 group :test do
