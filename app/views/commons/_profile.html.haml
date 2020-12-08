@@ -1,0 +1,37 @@
+.container
+  .top-box
+    .back-icon-box{"data-turbolinks" => "false"}
+      = link_to image_tag(src='backicon.png', alt: '戻るボタンです', class: 'back-icon'), :back
+    .accountname-box
+      .accountname
+        = user.accountname 
+    - unless current_page?(profile_path) 
+      .follow-btn-box
+        .follow-btn follow
+        .follow-btn unfollow
+    - else
+      .follow-btn-box
+        .follow-btn.hidden Follow
+  .user-icon-box
+    = image_tag user.user_avatar,class: 'user-icon'
+  - if current_page?(profile_path)
+    .user-icon-form-box.hidden
+      = form_with(model: @profle, url: profile_path, method: 'put', local: true) do |f|
+        %div
+          = f.file_field :avatar
+        = f.submit '保存', class: 'btn'
+
+  .user-information-box
+    .user-post-box.information-box
+      .count 44
+      .character Posts
+    .user-followers-box.information-box
+      .count 1000
+      .character Followers
+    .user-following-box.information-box
+      .count 113
+      .character Following
+  - @articles.each do |article|
+    = render 'commons/article', article: article
+  
+  
