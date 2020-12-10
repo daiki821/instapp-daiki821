@@ -1,0 +1,5 @@
+.container
+  = render 'commons/top', center: 'Followings'
+  - @followers.each do |user|
+    = render 'commons/relation', user: user
+

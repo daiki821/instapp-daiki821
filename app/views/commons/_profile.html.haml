@@ -27,11 +27,13 @@
         = user.articles.count
       .character Posts
     .user-followers-box.information-box
-      %data{:value => user.follower_count,class: 'count follower-c'} 
-      .character Followers
+      = link_to account_followers_path(account_id: user.id) do
+        %data{:value => user.follower_count,class: 'count follower-c'} 
+        .character Followers
     .user-following-box.information-box
-      %data{:value => user.following_count,class: 'count following-c'}
-      .character Followings
+      = link_to account_followings_path(account_id: user.id) do
+        %data{:value => user.following_count,class: 'count following-c'}
+        .character Followings
   - @articles.each do |article|
     = render 'commons/article', article: article
   

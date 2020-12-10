@@ -1,0 +1,32 @@
+.relation-user-box{
+  border-bottom: 1px solid rgba(0,0,0,.2);
+
+  .relation-user-icon-box{
+    margin: 30px 0;
+    margin-left:10px;
+    display: flex;
+
+    .relation-user-icon{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+
+    .relation-min-box{
+
+
+      .relation-accountname-box{
+        margin-bottom: 4px;
+
+      }
+
+      .relation-time-box{
+        color: #9E9E9E;
+        font-size: 12px;
+        margin-top: -5px;
+      }
+    }
+  }
+}
