@@ -42,12 +42,27 @@ class User < ApplicationRecord
     likes&.exists?(article_id: article.id)
   end
 
-  def follow!(user)
-    following_relationships.create!(following_id: user.id)
+  def follower_count
+    follower_relationships.count
+  end
+  
+  def following_count
+    following_relationships.count
   end
 
-  def unfollow(user)
-    relation = following_relationships.find_by!(following_id: user.id)
+  def has_followed?(user)
+    user_id = get_user_id(user)
+    following_relationships.exists?(following_id: user_id)
+  end
+
+  def follow!(user)
+    user_id = get_user_id(user)
+    following_relationships.create!(following_id: user_id)
+  end
+
+  def unfollow!(user)
+    user_id = get_user_id(user)
+    relation = following_relationships.find_by!(following_id: user_id)
     relation.destroy!
   end
 
@@ -62,5 +77,16 @@ class User < ApplicationRecord
   def prepare_profile
     profile || build_profile
   end
+
+  private
+
+  def get_user_id(user)
+    if user.is_a?(User)
+      user.id
+    else
+      user
+    end
+  end
+
 
 end

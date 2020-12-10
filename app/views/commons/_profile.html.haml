@@ -1,5 +1,5 @@
 .container
-  .top-box
+  .top-box.follow_json{ data: {account_id: user.id}}
     .back-icon-box{"data-turbolinks" => "false"}
       = link_to image_tag(src='backicon.png', alt: '戻るボタンです', class: 'back-icon'), :back
     .accountname-box
@@ -7,8 +7,8 @@
         = user.accountname 
     - unless current_page?(profile_path) 
       .follow-btn-box
-        .follow-btn follow
-        .follow-btn unfollow
+        .relation-btn.unfollow unfollow
+        .relation-btn.follow follow
     - else
       .follow-btn-box
         .follow-btn.hidden Follow
@@ -23,14 +23,15 @@
 
   .user-information-box
     .user-post-box.information-box
-      .count 44
+      .count
+        = user.articles.count
       .character Posts
     .user-followers-box.information-box
-      .count 1000
+      %data{:value => user.follower_count,class: 'count follower-c'} 
       .character Followers
     .user-following-box.information-box
-      .count 113
-      .character Following
+      %data{:value => user.following_count,class: 'count following-c'}
+      .character Followings
   - @articles.each do |article|
     = render 'commons/article', article: article
   
