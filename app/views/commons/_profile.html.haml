@@ -1,0 +1,40 @@
+.container
+  .top-box.follow_json{ data: {account_id: user.id}}
+    .back-icon-box{"data-turbolinks" => "false"}
+      = link_to image_tag(src='backicon.png', alt: '戻るボタンです', class: 'back-icon'), :back
+    .accountname-box
+      .accountname
+        = user.accountname 
+    - unless current_page?(profile_path) 
+      .follow-btn-box
+        .relation-btn.unfollow unfollow
+        .relation-btn.follow follow
+    - else
+      .follow-btn-box
+        .follow-btn.hidden Follow
+  .user-icon-box
+    = image_tag user.user_avatar,class: 'user-icon'
+  - if current_page?(profile_path)
+    .user-icon-form-box.hidden
+      = form_with(model: @profle, url: profile_path, method: 'put', local: true) do |f|
+        %div
+          = f.file_field :avatar
+        = f.submit '保存', class: 'btn'
+
+  .user-information-box
+    .user-post-box.information-box
+      .count
+        = user.articles.count
+      .character Posts
+    .user-followers-box.information-box
+      = link_to account_followers_path(account_id: user.id) do
+        %data{:value => user.follower_count,class: 'count follower-c'} 
+        .character Followers
+    .user-following-box.information-box
+      = link_to account_followings_path(account_id: user.id) do
+        %data{:value => user.following_count,class: 'count following-c'}
+        .character Followings
+  - @articles.each do |article|
+    = render 'commons/article', article: article
+  
+  

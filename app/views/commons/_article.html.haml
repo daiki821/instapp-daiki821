@@ -1,12 +1,13 @@
 .user-articles-box.like-json{ data: {article_id: article.id} }
-  .article-user-box
-    .article-user-icon-box
-      = image_tag article.user.user_avatar, class: 'user-icon-min'
-    .user-box
-      .user-name-box
-        = article.user.accountname
-      .create-time-box
-        create-time
+  = link_to account_path(id: article.user),data: {"turbolinks"=>false} do
+    .article-user-box
+      .article-user-icon-box
+        = image_tag article.user.user_avatar, class: 'user-icon-min'
+      .user-box
+        .user-name-box
+          = article.user.accountname
+        .create-time-box
+          create-time
   .article-image-box.grid
     - article.images.each.with_index(1) do |image, i|
       = image_tag image, class: "img#{i} article-image"
