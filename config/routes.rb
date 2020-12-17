@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   root to: 'articles#index'
 
+  resource :timeline, only: [:show]
+
   resources :articles do
     resource :like, only: [:show, :create, :destroy]
 

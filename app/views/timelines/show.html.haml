@@ -1,20 +1,11 @@
-- if user_signed_in?
-  = link_to 'ログアウト',destroy_user_session_path, data: {method: 'delete'}
-- else
-  = link_to '会員登録', new_user_registration_path
-  = link_to 'ログイン',user_session_path
-
-
 .container
   .post-button-box{"data-turbolinks" => 'false'}
     = link_to image_tag(src= 'camera.png', alt: '投稿ボタン' ), new_article_path
     = link_to '新着記事', root_path
     = link_to 'タイムライン', timeline_path
   - @articles.each do |article|
-    = render 'commons/article', article: article
-      
-
-
+    =render 'commons/article', article: article
 
 = javascript_pack_tag 'article'
 = javascript_pack_tag 'like'
+
